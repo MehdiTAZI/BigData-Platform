@@ -1,0 +1,17 @@
+################################
+#  full execution :  $ ansible-playbook mongodb_deploy.yaml --extra-vars "new_user=mtazi team_group=ADMIN_TEAM"
+#  debug / partial using tags :  $ ansible-playbook mongodb_deploy.yaml --extra-vars "new_user=mtazi" --tags "user-directories-create"
+################################
+
+---
+- hosts: all
+  remote_user: platform_admin
+  become: true
+  vars:
+    user_to_add: mtazi
+    group_to_add: "{{ admin_team }}"
+  roles:
+    - check_hdfs_services   #1
+    - create_user_structure #2
+    - create_user_and_group #3
+    - set_user_hdfs_rights  #4

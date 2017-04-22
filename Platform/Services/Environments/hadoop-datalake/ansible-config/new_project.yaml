@@ -1,0 +1,25 @@
+################################
+#  HOW TO USE IT 
+#  prod  / complete :  MehdiTAZI$ ansible-playbook new_project.yaml --extra-vars "project_name=Prj001 project_type=RUN projet_team=moe"
+#  debug / partial using tags :  MehdiTAZI$ ansible-playbook new_project.yaml --extra-vars "project_name=Prj001 project_type=RUN projet_team=moe" --tags "user-directories-create"
+################################
+
+---
+- hosts: all
+  remote_user: platform_admin
+  vars:
+    project_name: project_ # to make as variable [DRY,RUN,LAB]
+    project_type: RUN
+    project_team : "{{ community_group }}"
+    project_directories:
+     - { path: "/Projects/{{ project_type }}/{{ project_name}}", group: "{{ project_group_name }}", rights: 770 }
+     - { path: "/Projects/{{ project_type }}/{{ project_name}}/Private", group: "{{ project_group_name }}", rights: 770 }
+     - { path: "/Projects/{{ project_type }}/{{ project_name}}/Public", group: "{{ project_group_name }}", rights: 775 }
+     - { path: "/Projects/{{ project_type }}/{{ project_name}}/Prod", group: "{{ project_group_name }}", rights: 770 }
+     - { path: "/Projects/{{ project_type }}/{{ project_name}}/Test", group: "{{ project_group_name }}", rights: 770 }
+     - { path: "/Projects/{{ project_type }}/{{ project_name}}/Scripts", group: "{{ project_group_name }}", rights: 770 }
+
+  roles:
+    #- check_hadoop_services #1
+    - create_project_structure #2
+    - set_project_hdfs_rights  #3

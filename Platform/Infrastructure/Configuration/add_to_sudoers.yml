@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+  - name: Add a new user as a sudoer and give all grants
+    shell: echo "{{ new_user }} ALL=(ALL) ALL" >> /etc/sudoers
+    become: yes

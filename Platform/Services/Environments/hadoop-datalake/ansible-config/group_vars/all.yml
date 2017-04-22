@@ -1,0 +1,26 @@
+project_team: 'community_group'
+# change #754 to #755
+hdfs_structure:
+    - { path: '/Workspace', group: "{{ project_team }}", rights: 755 }
+    - { path: '/Lab', group: "{{ project_team }}", rights: 754 }
+    - { path: '/Projects', group: "{{ project_team }}", rights: 754 }
+    - { path: 'Projects/DRY', group: "{{ project_team }}", rights: 755 }
+    - { path: '/Projects/RUN', group: "{{ project_team }}", rights: 755 }
+    - { path: '/Projects/LAB', group: "{{ project_team }}", rights: 755 }
+    - { path: '/Data', group: "{{ project_team }}", rights: 755 }
+    - { path: '/Data/Managed', group: "{{ project_team }}", rights: 755 }
+    - { path: '/Data/RAW', group: "{{ project_team }}", rights: 755 }
+    - { path: '/Utils', group: "{{ project_team }}", rights: 755 }
+# tdod : to check
+unix_groups: [ { group: "{{ project_team }}" }, { group: 'community_team' }, { group: 'community_team' } ]
+
+user_structure_rights: 740
+user_structure:
+    - { path: "/user/{{ user_to_add }}", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Scripts", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Scripts/Private", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Scripts/Public", group: "{{ group_to_add }}", rights: 755 }
+    - { path: "/Workspace/{{ user_to_add }}/Data", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Data/Private", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Data/Public", group: "{{ group_to_add }}", rights: 755 }

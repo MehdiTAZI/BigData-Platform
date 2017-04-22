@@ -1,0 +1,19 @@
+################################
+#  full execution :  $ ansible-playbook mongodb_deploy.yaml
+################################
+
+---
+# miss cluster configuration
+- hosts: all
+  remote_user: platform_admin
+  become: yes
+  sudo: yes
+  tasks:
+     - name: Yum unstall
+       yum: >
+         name={{ item }}
+         state=present
+       with_items:
+         - mongodb-org
+       tags:
+         - mongodb

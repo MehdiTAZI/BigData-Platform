@@ -1,0 +1,15 @@
+mongodb:
+  image: mongo
+  ports:
+    - 27017:27017
+  volumes:
+    - /data:/data/db
+tomcat:
+ image: tomcat.
+  ports:
+    - 8080:8080
+  environment:
+    - TOMCAT_User=admins
+    - TOMCAT_PASS=admin
+  links:
+    - mongodb

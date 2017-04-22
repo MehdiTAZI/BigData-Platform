@@ -1,0 +1,47 @@
+#TODO : to use docker compose
+
+ version: '2'
+ services:
+   app:
+     build: .
+     image: mehditazi/datalake:latest
+     container_name: hadoop-standalone # bad-way
+     ports:
+      - 8080:8080
+      - 8670:8670
+      - 8440:8440
+      - 8441:8441
+      - 50010:50010
+      - 50020:50020
+      - 50070:50070
+      - 8188:8188
+      - 8190:8190
+      - 10200:10200
+      - 8020:8020
+      - 50075:50075
+      - 60010:60010
+      - 60020:60020
+      - 10000:10000
+      - 8088:8088
+      - 50060:50060
+      - 8032:8032
+      - 2022:2022
+      - 80:80
+      - 3306:3306
+
+     environment:
+       DB_HOST: cassandra-standalone
+     networks:
+      - mydomain-network
+
+   db:
+     image: cassandra
+     container_name: cassandra-standalone
+     ports:
+       - 7000:7000
+       - 9042:9042
+     networks:
+       - mydomain-network
+ networks:
+   mydomain-network:
+     driver: bridge

@@ -1,0 +1,24 @@
+---
+
+######################################
+# C.1 - create groups
+######################################
+
+  - name: Create Linux group
+    group: name={{ team_group }}
+    become: yes
+    tags:
+     - groups-create
+     - init-rights
+######################################
+# C.1 - create user
+######################################
+
+  - name: Add Linux user to the group
+    user: name={{ new_user }} shell=/bin/bash groups={{ team_group }} append=yes
+    become: yes
+    tags:
+     - user-create
+     - init-rights
+
+

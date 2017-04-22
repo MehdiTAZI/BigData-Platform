@@ -1,0 +1,27 @@
+---
+
+######################## PROJECT DIRECTORIES ########################
+
+ #C.2 - set chmod access rights for the new user directories
+
+  - name: set chmod access rights for the new project directories
+    command: hdfs dfs -chmod {{ item.rights }} {{ item.path }}
+    with_items: "{{ project_structure }}"
+    become_user: hdfs
+    become: true
+    ignore_errors: True
+    tags:
+     - user-directories-chmod
+     - user-directories
+
+# C.3 - set chown access rights for the new user directories
+
+  - name: set chown access rights for the new project directories
+    command: hdfs dfs -chown -R :{{ item.group }} {{ item.path }}
+    with_items: "{{ project_structure }}"
+    become_user: hdfs
+    become: true
+    ignore_errors: True
+    tags:
+     - user-directories-chown
+     - user-directories

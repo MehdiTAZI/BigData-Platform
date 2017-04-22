@@ -1,0 +1,17 @@
+################################
+#  HOW TO USE IT 
+#  prod  / complete :  MehdiTAZI$ ansible-playbook init_environment.yaml
+#  debug / partial using tags :  MehdiTAZI$ ansible-playbook init_environment.yaml --tags "structure-create"
+#################################
+
+# TODO : use ACLs instead of posix -->  we need to have a fine grained control on the folder [ activation required ]
+
+---
+- hosts: all
+  remote_user: platform_admin
+  become: yes
+  roles:
+    - check_hdfs_services #1
+    - create_hdfs_structure #2
+    - create_unix_groups    #4
+    - set_hdfs_rights       #3

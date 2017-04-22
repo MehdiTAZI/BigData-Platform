@@ -1,0 +1,16 @@
+---
+
+######################################
+# C.1 - create groups
+######################################
+
+  - name: Create Linux group
+    group: name={{ item.group }}
+    with_items:
+     - "{{ unix_groups }}"
+    ignore_errors: True
+    become: yes
+    tags:
+     - groups-create
+     - groups-create-step1
+     - init-rights

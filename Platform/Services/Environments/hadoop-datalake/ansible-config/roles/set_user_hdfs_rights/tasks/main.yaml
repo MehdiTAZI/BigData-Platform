@@ -1,0 +1,27 @@
+---
+
+######################## DATALAKE DIRECTORIES ########################
+
+ #C.3 - set chmod access rights for the new user directories
+
+  - name: set chmod access rights for the new user directories
+    command: hdfs dfs -chmod {{ item.rights }} {{ item.path }}
+    with_items: "{{ user_structure }}"
+    become_user: hdfs
+    become: true
+    ignore_errors: True
+    tags:
+     - user-directories-chmod
+     - user-directories
+
+# C.4 - set chown access rights for the new user directories
+
+  - name: set chown access rights for the new user directories
+    command: hdfs dfs -chown -R {{ new_user }}:{{ item.group }} {{ item.path }}
+    with_items: "{{ user_structure }}"
+    become_user: hdfs
+    become: true
+    ignore_errors: True
+    tags:
+     - user-directories-chown
+     - user-directories

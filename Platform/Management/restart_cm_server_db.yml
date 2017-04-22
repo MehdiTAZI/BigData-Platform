@@ -1,0 +1,10 @@
+---
+- hosts: hadoop_admin_cm_host
+  sudo: yes
+  tasks:
+    - name: Restart Coudera Manager server
+      service: >
+        name=cloudera-scm-server-db
+        state=restarted
+      tags:
+        - cloudera_manager_database

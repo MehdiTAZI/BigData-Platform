@@ -1,0 +1,41 @@
+---
+
+######################## DATALAKE DIRECTORIES ########################
+
+# C.2 - set chmod access rights for the new structure
+
+  - name: set chmod access rights for the new structure
+    command: hdfs dfs -chmod {{ item.rights }} {{ item.path }}
+    with_items: "{{ hdfs_structure }}"
+    become_user: hdfs
+    become: true
+    ignore_errors: True
+    tags:
+     - structure-chmod
+     - structure
+
+# C.3 - set chown access rights for the new structure
+
+  - name: set chown access rights for the new structure
+    command: hdfs dfs -chown -R hdfs:{{ item.group }} {{ item.path }}
+    with_items: "{{ hdfs_structure }}"
+    become_user: hdfs
+    become: true
+    ignore_errors: True
+    tags:
+     - structure-chown
+     - structure
+
+######################## HIVE DIRECTORIES ########################
+
+# C.4 - set chmod access rights for hadoop directory
+
+  - name: set chmod access rights HDFS structures
+    command: hdfs dfs -chmod 777 {{ item }} # 777 to remove
+    with_items:
+    - "/apps/hive/warehouse" #Hive
+    become_user: hdfs
+    become: true
+    ignore_errors: True
+    tags:
+     - hadoop-chmod

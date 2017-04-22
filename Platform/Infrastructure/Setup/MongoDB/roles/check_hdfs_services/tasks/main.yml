@@ -1,0 +1,14 @@
+---
+######################################
+# A - Check HDFS is running
+# TODO : TO FIX
+######################################
+
+  - name: check HDFS services are running
+    command : jps
+    register: command_result
+    failed_when: "'DataNode' and 'NameNode' not in command_result.stdout"
+    become_user: hdfs
+    become: true
+    tags:
+     - hdfs-services-check

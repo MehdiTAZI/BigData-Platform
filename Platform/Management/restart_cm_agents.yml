@@ -1,0 +1,10 @@
+---
+- hosts: all # all hadoop hosts
+  sudo: yes
+  tasks:
+    - name: Reload Cloudera Manager agent
+      service: >
+        name=cloudera-scm-agent
+        state=restarted
+      tags:
+        - cloudera_agents

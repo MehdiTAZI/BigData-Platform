@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root type="database" name="Clusters" expanded="True">
+	<container type="folder" name="SSH" expanded="True">	
+	<container type="folder" name="Dev" expanded="True">	
+	<container type="folder" name="Cassandra" expanded="True">	
+		<connection type="PuTTY" name="node01">
+			<name>node01</name>
+			<protocol>Telnet</protocol>
+			<host>172.20.42.34</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>
+			</description>
+			<login>mtazi</login>
+			<password>password</password>
+			<connectiontimeout>1000</connectiontimeout>
+			<logintimeout>750</logintimeout>
+			<passwordtimeout>750</passwordtimeout>
+			<commandtimeout>750</commandtimeout>
+			<command1 />
+			<command2 />
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>False</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+	</container>
+	<container type="folder" name="Hadoop" expanded="True">	
+		<connection type="PuTTY" name="devdedge01 - edge node">
+			<name>devdedge01 - edge node</name>
+			<protocol>Telnet</protocol>
+			<host>172.20.42.35</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>
+            </description>
+			<login>mtazi</login>
+			<password>password</password>
+			<connectiontimeout>1000</connectiontimeout>
+			<logintimeout>750</logintimeout>
+			<passwordtimeout>750</passwordtimeout>
+			<commandtimeout>750</commandtimeout>
+			<command1 />
+			<command2 />
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>False</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+		<connection type="PuTTY" name="devdn01 - data node 1">
+			<name>devdn01 - data node 1</name>
+			<protocol>Telnet</protocol>
+			<host>172.20.42.36</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>
+            </description>
+			<login>mtazi</login>
+			<password>password</password>
+			<connectiontimeout>1000</connectiontimeout>
+			<logintimeout>750</logintimeout>
+			<passwordtimeout>750</passwordtimeout>
+			<commandtimeout>750</commandtimeout>
+			<command1 />
+			<command2 />
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>False</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+		<connection type="PuTTY" name="devdn02 - data node 2">
+			<name>devdn02 - data node 2</name>
+			<protocol>Telnet</protocol>
+			<host>172.20.42.37</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>
+            </description>
+			<login>mtazi</login>
+			<password>password</password>
+			<connectiontimeout>1000</connectiontimeout>
+			<logintimeout>750</logintimeout>
+			<passwordtimeout>750</passwordtimeout>
+			<commandtimeout>750</commandtimeout>
+			<command1 />
+			<command2 />
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>False</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+		<connection type="PuTTY" name="devdn03 - datanode 3">
+			<name>devdn03 - datanode 3</name>
+			<protocol>Telnet</protocol>
+			<host>172.20.42.38</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>
+            </description>
+			<login>mtazi</login>
+			<password>password</password>
+			<connectiontimeout>1000</connectiontimeout>
+			<logintimeout>750</logintimeout>
+			<passwordtimeout>750</passwordtimeout>
+			<commandtimeout>750</commandtimeout>
+			<command1 />
+			<command2 />
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>False</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+		<connection type="PuTTY" name="devnn01 - namenode 1">
+			<name>devnn01 - namenode 1</name>
+			<protocol>Telnet</protocol>
+			<host>172.20.42.39</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>
+            </description>
+			<login>mtazi</login>
+			<password>password</password>
+			<connectiontimeout>1000</connectiontimeout>
+			<logintimeout>750</logintimeout>
+			<passwordtimeout>750</passwordtimeout>
+			<commandtimeout>750</commandtimeout>
+			<command1 />
+			<command2 />
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>False</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+		<connection type="PuTTY" name="devnn02 - namenode 2">
+			<name>devnn02 - namenode 2</name>
+			<protocol>SSH</protocol>
+			<host>172.20.42.40</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>Environnement de dév : 1 node</description>
+			<login>mtazi</login>
+			<password>password</password>
+			<connectiontimeout>1000</connectiontimeout>
+			<logintimeout>750</logintimeout>
+			<passwordtimeout>750</passwordtimeout>
+			<commandtimeout>750</commandtimeout>
+			<command1 />
+			<command2 />
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>False</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+	</container>
+	<container type="folder" name="Kafka" expanded="False">
+	</container>
+	</container>
+	<container type="folder" name="Integ" expanded="True">	
+	<container type="folder" name="Hadoop" expanded="False">
+	</container>
+	<container type="folder" name="Machine collecte" expanded="False">
+	</container>
+	</container>
+	<container type="folder" name="Prod" expanded="True">	
+	<container type="folder" name="Apps" expanded="True">	
+		<connection type="PuTTY" name="appdn01.prod.bigdata">
+			<name>appdn01.prod.bigdata</name>
+			<protocol>SSH</protocol>
+			<host>172.20.45.16</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>
+			</description>
+			<login>mtazi</login>
+			<password>passpass</password>
+			<connectiontimeout>1500</connectiontimeout>
+			<logintimeout>1000</logintimeout>
+			<passwordtimeout>1000</passwordtimeout>
+			<commandtimeout>1000</commandtimeout>
+			<command1>ssh rebondadm01.bigdata</command1>
+			<command2>ssh mtazi@appn01</command2>
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>True</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+	</container>
+	<container type="folder" name="Lab" expanded="False">
+	</container>
+	<container type="folder" name="Machine rebond" expanded="True">	
+		<connection type="PuTTY" name="Prod 1">
+			<name>Prod 1</name>
+			<protocol>Telnet</protocol>
+			<host>s00vl9976</host>
+			<port>22</port>
+			<session>Default Settings</session>
+			<description>
+            </description>
+			<login />
+			<password />
+			<connectiontimeout>1000</connectiontimeout>
+			<logintimeout>750</logintimeout>
+			<passwordtimeout>750</passwordtimeout>
+			<commandtimeout>750</commandtimeout>
+			<command1 />
+			<command2 />
+			<command3 />
+			<command4 />
+			<command5 />
+			<postcommands>False</postcommands>
+			<ftpusername />
+			<ftppassword />
+			<sftpusername />
+			<sftppassword />
+	</connection>
+	</container>
+	</container>
+	</container>
+</root>

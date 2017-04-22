@@ -1,0 +1,14 @@
+---
+######################################
+# B - Create user structures
+######################################
+
+  - name: create HDFS user structure
+    command: hdfs dfs -mkdir -p {{ item.path }}
+    with_items: "{{ user_structure }}"
+    become_user: hdfs
+    become: true
+    ignore_errors: True
+    tags:
+     - user-directories-create
+     - user-directories
