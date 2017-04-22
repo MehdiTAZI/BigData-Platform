@@ -1,0 +1,80 @@
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="data-integration">
+
+    <start to="sqoop-import"/>
+
+    <action name="sqoop-import">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <!-- CODE HERE-->
+        </shell>
+        <ok to="create-hive-table"/>
+        <error to="fail"/>
+
+    </action>
+
+    <action name="create-hive-table">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <!-- create hive table -->
+        </shell>
+        <ok to="generate-parquet-hive-table"/>
+        <error to="fail"/>
+
+    </action>
+
+    <action name="generate-parquet-hive-table">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <!-- generate parquet hive table -->
+        </shell>
+        <ok to="system-notification"/>
+        <error to="fail"/>
+
+    </action>
+
+    <action name="system-notification">
+        <shell xmlns="uri:oozie:shell-action:0.2">
+            <job-tracker>${jobTracker}</job-tracker>
+            <name-node>${nameNode}</name-node>
+            <configuration>
+                <property>
+                    <name>mapred.job.queue.name</name>
+                    <value>${queueName}</value>
+                </property>
+            </configuration>
+            <exec>system-notification.sh</exec>
+            <file>../shell/system-notification.sh</file>
+        </shell>
+        <ok to="end"/>
+        <error to="fail"/>
+
+    </action>
+
+    <kill name="fail">
+        <message>Action failed !, error message[${wf:errorMessage(wf:lastErrorNode())}]</message>
+    </kill>
+
+    <end name="end"/>
+
+</workflow-app>
