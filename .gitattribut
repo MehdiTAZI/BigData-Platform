@@ -1,3 +1,6 @@
-* linguist-vendored
-*.js linguist-vendored=false
-*.sh linguist-vendored=false
+Platform/Infrastructure/Configuration/** linguist-vendored
+Platform/Infrastructure/Requirements-test/** linguist-vendored
+Platform/Infrastructure/Setup/mongodb/** linguist-vendored
+Platform/Management/hadoop-datalake/ansible-config/** linguist-vendored
+Platform/Services/Egress/** linguist-vendored
+Platform/Services/Ingestion/** linguist-vendored
