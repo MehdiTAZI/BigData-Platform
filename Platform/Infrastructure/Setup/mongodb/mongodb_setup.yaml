@@ -1,5 +1,5 @@
 ################################
-#  full execution :  $ ansible-playbook mongodb_deploy.yaml
+#  full execution :  $ ansible-playbook mongodb_setup.yaml
 ################################
 
 ---

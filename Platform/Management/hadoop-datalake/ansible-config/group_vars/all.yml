@@ -1,4 +1,17 @@
 project_team: 'community_group'
+
+user_structure:
+    - { path: "/user/{{ user_to_add }}", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Scripts", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Scripts/Private", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Scripts/Public", group: "{{ group_to_add }}", rights: 755 }
+    - { path: "/Workspace/{{ user_to_add }}/Data", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Data/Private", group: "{{ group_to_add }}", rights: 750 }
+    - { path: "/Workspace/{{ user_to_add }}/Data/Public", group: "{{ group_to_add }}", rights: 755 }
+
+user_structure_rights: 740
+
 # change #754 to #755
 hdfs_structure:
     - { path: '/Workspace', group: "{{ project_team }}", rights: 755 }
@@ -13,14 +26,3 @@ hdfs_structure:
     - { path: '/Utils', group: "{{ project_team }}", rights: 755 }
 # tdod : to check
 unix_groups: [ { group: "{{ project_team }}" }, { group: 'community_team' }, { group: 'community_team' } ]
-
-user_structure_rights: 740
-user_structure:
-    - { path: "/user/{{ user_to_add }}", group: "{{ group_to_add }}", rights: 750 }
-    - { path: "/Workspace/{{ user_to_add }}", group: "{{ group_to_add }}", rights: 750 }
-    - { path: "/Workspace/{{ user_to_add }}/Scripts", group: "{{ group_to_add }}", rights: 750 }
-    - { path: "/Workspace/{{ user_to_add }}/Scripts/Private", group: "{{ group_to_add }}", rights: 750 }
-    - { path: "/Workspace/{{ user_to_add }}/Scripts/Public", group: "{{ group_to_add }}", rights: 755 }
-    - { path: "/Workspace/{{ user_to_add }}/Data", group: "{{ group_to_add }}", rights: 750 }
-    - { path: "/Workspace/{{ user_to_add }}/Data/Private", group: "{{ group_to_add }}", rights: 750 }
-    - { path: "/Workspace/{{ user_to_add }}/Data/Public", group: "{{ group_to_add }}", rights: 755 }
