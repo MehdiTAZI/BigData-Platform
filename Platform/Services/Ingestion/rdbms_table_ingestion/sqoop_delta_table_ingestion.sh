@@ -2,10 +2,13 @@
 
 # todo :
 # se
-echo -n "Enter kerberos username > "
-read kerberos_username
+echo -n "Enter your kerberos username > "
+read username
 
-kinit $kerberos_username
+echo -n "Enter your kerberos password > "
+read password
+
+echo $password | kinit $username
 
 echo -n "Enter the database hostname > "
 read database_hostname
