@@ -1,6 +1,6 @@
 # Big-Data Platform
 
-This project is complete end to end big data project, that aims to show how to implement different big data layers, from the infrastructure layer to the end use one.
+This project will contains some code exaplains for both implementing infrastructure for big data based projects and well the application part, the source code aims to show how to implement different big data layers based on different big data technologies (hadoop, mongodb...).
 
 It is structured as follow : 
 * `Engineering : `  contains applications and notebooks 
